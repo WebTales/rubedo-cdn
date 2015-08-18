@@ -13,4 +13,5 @@ RUN mkdir -p /usr/local/www/cache/static
 ADD nginx.conf /etc/nginx/
 EXPOSE 80 443
 
+VOLUME /usr/local/www/cache/static
 CMD ["nginx", "-g", "daemon off;"]
