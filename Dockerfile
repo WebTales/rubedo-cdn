@@ -9,9 +9,10 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 
-RUN mkdir -p /usr/local/www/cache/static
+COPY files /files
+
 ADD nginx.conf /etc/nginx/
 EXPOSE 80 443
 
-VOLUME /usr/local/www/cache/static
+VOLUME /files
 CMD ["nginx", "-g", "daemon off;"]
