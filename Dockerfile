@@ -8,8 +8,8 @@ RUN yum install -y nginx
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
-RUN mkdir -p /usr/local/files
-COPY files /usr/local/wwww/files
+RUN mkdir -p /usr/local/www
+COPY files /usr/local/www
 
 ADD nginx.conf /etc/nginx/
 EXPOSE 80 443
