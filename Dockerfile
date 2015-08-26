@@ -10,7 +10,7 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 RUN mkdir -p /usr/local/www
 COPY files /usr/local/www
-COPY index.html /usr/local/www
+ADD index.html /usr/local/www/
 
 ADD nginx.conf /etc/nginx/
 EXPOSE 80 443
